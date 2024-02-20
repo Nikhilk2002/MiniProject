@@ -1,10 +1,17 @@
 
 import './App.css';
-import Header from './Componennt/User/Header/Header';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UserRouter from './Router/UserRouter';
+import AdminRouter from './Router/AdminRouter';
 function App() {
   return (
     <div>
-       <Header/>
+        <BrowserRouter>
+        <Routes>
+         <Route path='/*' element={<UserRouter/>}/>
+         <Route path='/admin/*' element={<AdminRouter/>}/>
+        </Routes>
+       </BrowserRouter>
     </div>
   );
 }
